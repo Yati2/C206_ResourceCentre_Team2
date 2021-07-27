@@ -94,6 +94,7 @@ public class ResourceCentreTest {
 	public void testRetrieveAllChromebook() {
 		//fail("Not yet implemented");
 		// write your code here
+		
 	}
 
 	@Test
@@ -101,12 +102,24 @@ public class ResourceCentreTest {
 		//fail("Not yet implemented");
 		// write your code here
 		
+		
 	}
 	
 	@Test
 	public void testDoLoanChromebook() {
 		//fail("Not yet implemented");
 		// write your code here
+		//TEST THAT ITEM IS AVAILABLE?
+		
+		//TEST THAT ITEM DUE DATE
+		
+		
+		boolean resultcb = ResourceCentre.doLoanChromebook(chromebookList, cb1.getAssetTag(), cb1.getDueDate());
+		assertEquals("Test if method for first cb result is false", resultcb, true);
+		
+		boolean resultcb2 = ResourceCentre.doLoanChromebook(chromebookList, cb2.getAssetTag(), cb2.getDueDate());
+		assertEquals("Test if method for second cb result is true", resultcb2, true);
+		
 	}
 	
 	@Test
