@@ -128,9 +128,9 @@ public class ResourceCentreTest {
 		String tag1="CC0011";
 		String date="29-9-2021";
 		
+		camcorderList.clear();
 		//Test Case 1: tag is not inside the list -error
-		assertNotNull("Test if there is valid Camcorder arraylist to add to", chromebookList);
-		
+
 		boolean result1= ResourceCentre.doLoanCamcorder(camcorderList,tag1 , date);
 		assertFalse("There is no item to loan",result1);
 		
