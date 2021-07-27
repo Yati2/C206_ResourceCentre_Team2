@@ -135,7 +135,7 @@ public class ResourceCentreTest {
 		//fail("Not yet implemented");
 		// write your code here
 		//WeiZhe
-		assertNotNull("Test that if the Camcorder arrayList is empty loan for Camcorder should be unavailable", chromebookList);
+		assertNotNull("Test that if the Camcorder arrayList is empty loan for Camcorder should be unavailable", camcorderList);
 		assertEquals("Test that only Camcorder is returned", true, cc1.getIsAvailable());
 		ResourceCentre.doReturnCamcorder(camcorderList, cc1.getAssetTag());
         ResourceCentre.doReturnCamcorder(camcorderList, cc2.getAssetTag());
