@@ -94,8 +94,7 @@ public class ResourceCentreTest {
 	public void testRetrieveAllChromebook() {
 		//fail("Not yet implemented");
 		// write your code here
-<<<<<<< HEAD
-=======
+
 		// by Xiaoyu
 		// Test if Item list is not null but empty, so that can add a new item
 				assertNotNull("Test if there is valid Camcorder arraylist to add to", chromebookList);
@@ -117,7 +116,7 @@ public class ResourceCentreTest {
 				testOutput += String.format("%-10s %-30s %-10s %-10s %-20d\n","CC0012", "Sony DSC-RX100M7", "Yes", "", 20);
 			
 				assertEquals("Check that ViewAllChromebooklist", testOutput, allChromebook);
->>>>>>> branch 'master' of https://github.com/Yati2/C206_ResourceCentre_Team2.git
+
 		
 	}
 
