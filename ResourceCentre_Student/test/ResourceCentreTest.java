@@ -123,7 +123,7 @@ public class ResourceCentreTest {
 		ResourceCentre.doReturnChromebook(chromebookList, cb1.getAssetTag());
         ResourceCentre.doReturnChromebook(chromebookList, cb2.getAssetTag());
         assertEquals("Test that camcorder availability is true?", true, cb1.getIsAvailable());
-        assertEquals("Test that camcorder availability is true?", true, cb2.getIsAvailable());  
+        assertEquals("Test that camcorder availability is true?", true, cb2.getIsAvailable());
 	}
 	@After
 	public void tearDown() throws Exception {
