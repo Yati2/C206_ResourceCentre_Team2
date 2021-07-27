@@ -128,27 +128,28 @@ public class ResourceCentreTest {
 		String tag1="CC0011";
 		String date="29-9-2021";
 		
-		//tag is not inside the list -error
+		//Test Case 1: tag is not inside the list -error
 		assertNotNull("Test if there is valid Camcorder arraylist to add to", chromebookList);
 		
 		boolean result1= ResourceCentre.doLoanCamcorder(camcorderList,tag1 , date);
 		assertFalse("There is no item to loan",result1);
 		
-		//availability -normal
-		//due date -normal
+		
+		//Test case 2: 
 		ResourceCentre.addCamcorder(camcorderList, cc1);
 		boolean result2= ResourceCentre.doLoanCamcorder(camcorderList,tag1 , date);
 		assertEquals("Test if cc1 is loaned", result2,true);
 		
 		
-		//double loan
+		//Test case 3: double loan
 		boolean result3= ResourceCentre.doLoanCamcorder(camcorderList,tag1 , date);
-		assertEquals("Test if cc1 is loaned", result3,false);
+		assertEquals("Test if cc1 is already loaned", result3,false);
+		
+		//Test case 4: check due date and availability
+		assertEquals("Due Date checked",cc1.getDueDate(),date);
+		assertFalse("Availability checked",cc1.getIsAvailable());
 		
 	
-
-		//boolean result2= ResourceCentre.doLoanCamcorder(camcorderList, cc2.getAssetTag(), cc2.getDueDate());
-		//assertEquals("Test if cc2 is  loaned", result2,false);
 		
 	
 	}
