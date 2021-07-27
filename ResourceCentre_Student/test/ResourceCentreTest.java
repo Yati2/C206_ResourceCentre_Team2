@@ -130,7 +130,6 @@ public class ResourceCentreTest {
 		
 		camcorderList.clear();
 		//Test Case 1: tag is not inside the list -error
-
 		boolean result1= ResourceCentre.doLoanCamcorder(camcorderList,tag1 , date);
 		assertFalse("There is no item to loan",result1);
 		
