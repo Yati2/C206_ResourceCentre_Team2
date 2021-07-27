@@ -125,7 +125,32 @@ public class ResourceCentreTest {
 		//fail("Not yet implemented");
 		// write your code here
 		
+		String tag1="CC0011";
+		String date="29-9-2021";
 		
+		//tag is not inside the list -error
+		assertNotNull("Test if there is valid Camcorder arraylist to add to", chromebookList);
+		
+		boolean result1= ResourceCentre.doLoanCamcorder(camcorderList,tag1 , date);
+		assertFalse("There is no item to loan",result1);
+		
+		//availability -normal
+		//due date -normal
+		ResourceCentre.addCamcorder(camcorderList, cc1);
+		boolean result2= ResourceCentre.doLoanCamcorder(camcorderList,tag1 , date);
+		assertEquals("Test if cc1 is loaned", result2,true);
+		
+		
+		//double loan
+		boolean result3= ResourceCentre.doLoanCamcorder(camcorderList,tag1 , date);
+		assertEquals("Test if cc1 is loaned", result3,false);
+		
+	
+
+		//boolean result2= ResourceCentre.doLoanCamcorder(camcorderList, cc2.getAssetTag(), cc2.getDueDate());
+		//assertEquals("Test if cc2 is  loaned", result2,false);
+		
+	
 	}
 	
 	@Test
@@ -133,15 +158,12 @@ public class ResourceCentreTest {
 		//fail("Not yet implemented");
 		// write your code here
 		//TEST THAT ITEM IS AVAILABLE?
-		
-		//TEST THAT ITEM DUE DATE
-		
-		
+
 		boolean resultcb = ResourceCentre.doLoanChromebook(chromebookList, cb1.getAssetTag(), cb1.getDueDate());
 		assertEquals("Test if method for first cb result is false", resultcb, true);
 		
 		boolean resultcb2 = ResourceCentre.doLoanChromebook(chromebookList, cb2.getAssetTag(), cb2.getDueDate());
-		assertEquals("Test if method for second cb result is true", resultcb2, true);
+		assertFalse("Test if method for second cb result is true", resultcb2);
 		
 	}
 	
