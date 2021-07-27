@@ -125,6 +125,7 @@ public class ResourceCentreTest {
         assertEquals("Test that camcorder availability is true?", true, cb1.getIsAvailable());
         assertEquals("Test that camcorder availability is true?", true, cb2.getIsAvailable());
 	}
+	
 	@After
 	public void tearDown() throws Exception {
 		cc1 = null;
