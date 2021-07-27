@@ -227,7 +227,9 @@ public class ResourceCentre {
 
 		for (int i = 0; i < camcorderList.size(); i++) {
 			if (tag.equalsIgnoreCase(camcorderList.get(i).getAssetTag())
-					&& camcorderList.get(i).getIsAvailable() == false) {
+					&& camcorderList.get(i).getIsAvailable() == false) 
+			
+			{
 				camcorderList.get(i).setIsAvailable(true);
 				camcorderList.get(i).setDueDate("");
 				isReturned = true;

@@ -132,38 +132,25 @@ public class ResourceCentreTest {
 
 	@Test
 	public void testDoLoanCamcorder() {
-<<<<<<< HEAD
+
 		//fail("Not yet implemented");
 		// yati
 		
 		String tag1="CC0011";
 		String date="29-9-2021";
-		
-=======
-		// fail("Not yet implemented");
-		// write your code here
 
-		String tag1 = "CC0011";
-		String date = "29-9-2021";
-
->>>>>>> branch 'master' of https://github.com/Yati2/C206_ResourceCentre_Team2.git
 		camcorderList.clear();
-<<<<<<< HEAD
+
 		//Test Case 1: tag is not inside the list -error
 		boolean result1= ResourceCentre.doLoanCamcorder(camcorderList,tag1 , date);
 		assertFalse("There is no item to loan",result1);
 		
 		
 		//Test case 2: normal 
-=======
-		// Test Case 1: tag is not inside the list -error
-		boolean result1 = ResourceCentre.doLoanCamcorder(camcorderList, tag1, date);
-		assertFalse("There is no item to loan", result1);
 
-		// Test case 2:
->>>>>>> branch 'master' of https://github.com/Yati2/C206_ResourceCentre_Team2.git
+
 		ResourceCentre.addCamcorder(camcorderList, cc1);
-<<<<<<< HEAD
+
 		boolean result2= ResourceCentre.doLoanCamcorder(camcorderList,tag1 , date);
 		assertEquals("Test if cc1 is loaned", result2,true);
 		
@@ -175,18 +162,11 @@ public class ResourceCentreTest {
 		//Test case 4: check due date and availability
 		assertEquals("Due Date checked",cc1.getDueDate(),date);
 		assertFalse("Availability checked",cc1.getIsAvailable());
-=======
-		boolean result2 = ResourceCentre.doLoanCamcorder(camcorderList, tag1, date);
-		assertEquals("Test if cc1 is loaned", result2, true);
 
-		// Test case 3: double loan
-		boolean result3 = ResourceCentre.doLoanCamcorder(camcorderList, tag1, date);
-		assertEquals("Test if cc1 is already loaned", result3, false);
 
 		// Test case 4: check due date and availability
 		assertEquals("Due Date checked", cc1.getDueDate(), date);
 		assertFalse("Availability checked", cc1.getIsAvailable());
->>>>>>> branch 'master' of https://github.com/Yati2/C206_ResourceCentre_Team2.git
 
 	}
 
@@ -209,6 +189,31 @@ public class ResourceCentreTest {
 		// fail("Not yet implemented");
 		// write your code here
 		// WeiZhe
+		
+		String tag1="CC0011";
+		
+
+	
+		//Test case 1: if the asset tag is not in the arrayList -error
+		camcorderList.clear();
+		boolean result1= ResourceCentre.doReturnCamcorder(camcorderList,tag1);
+		assertFalse("There is no matched tag inside the arrayList",result1);
+		
+		//Test case 2: normal condition
+		ResourceCentre.addCamcorder(camcorderList, cc1);
+		cc1.setIsAvailable(false);
+		boolean result2= ResourceCentre.doReturnCamcorder(camcorderList,tag1);
+		assertTrue("The item has returned",result2);
+		
+		//Test case 3: return the available item - error
+		boolean result3= ResourceCentre.doReturnCamcorder(camcorderList,tag1);
+		assertFalse("U cannot return unloaned item",result3);
+		
+		//Test case 4: check the status of the item after return
+		
+		assertEquals("The status is updated",true, cc1.getIsAvailable());
+
+		/*
 		assertNotNull("Test that if the Camcorder arrayList is empty loan for Camcorder should be unavailable",
 				camcorderList);
 		assertEquals("Test that only Camcorder is returned", true, cc1.getIsAvailable());
@@ -216,7 +221,7 @@ public class ResourceCentreTest {
 		ResourceCentre.doReturnCamcorder(camcorderList, cc2.getAssetTag());
 		assertEquals("Test that Camcorder availability is true?", true, cc1.getIsAvailable());
 		assertEquals("Test that Camcorder availability is true?", true, cc2.getIsAvailable());
-
+*/
 	}
 
 	@Test
