@@ -134,8 +134,15 @@ public class ResourceCentreTest {
 	public void testDoReturnCamcorder() {
 		//fail("Not yet implemented");
 		// write your code here
-		
-	}
+		//WeiZhe
+		assertNotNull("Test that if the Camcorder arrayList is empty loan for Camcorder should be unavailable", chromebookList);
+		assertEquals("Test that only Camcorder is returned", true, cc1.getIsAvailable());
+		ResourceCentre.doReturnCamcorder(camcorderList, cc1.getAssetTag());
+        ResourceCentre.doReturnCamcorder(camcorderList, cc2.getAssetTag());
+        assertEquals("Test that Camcorder availability is true?", true, cc1.getIsAvailable());
+        assertEquals("Test that Camcorder availability is true?", true, cc2.getIsAvailable());
+
+	}	
 	@Test
 	public void testDoReturnChromebook() {
 		//fail("Not yet implemented");
