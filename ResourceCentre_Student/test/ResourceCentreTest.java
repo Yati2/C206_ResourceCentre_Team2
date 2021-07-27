@@ -192,8 +192,6 @@ public class ResourceCentreTest {
 		
 		String tag1="CC0011";
 		
-
-	
 		//Test case 1: if the asset tag is not in the arrayList -error
 		camcorderList.clear();
 		boolean result1= ResourceCentre.doReturnCamcorder(camcorderList,tag1);
@@ -228,13 +226,26 @@ public class ResourceCentreTest {
 	public void testDoReturnChromebook() {
 		// fail("Not yet implemented");
 		// write your code here
-		assertNotNull("Test that if the Chromebook arrayList is empty loan for chromebook should be unavailable",
-				chromebookList);
-		assertEquals("Test that only chromebook is returned", true, cb1.getIsAvailable());
-		ResourceCentre.doReturnChromebook(chromebookList, cb1.getAssetTag());
-		ResourceCentre.doReturnChromebook(chromebookList, cb2.getAssetTag());
-		assertEquals("Test that camcorder availability is true?", true, cb1.getIsAvailable());
-		assertEquals("Test that camcorder availability is true?", true, cb2.getIsAvailable());
+		String tag1 = "CB0011";
+		
+		//Test case 1: if the asset tag is not in the arrayList -error
+		chromebookList.clear();
+		boolean result1= ResourceCentre.doReturnChromebook(chromebookList,tag1);
+		assertFalse("There is no matched tag inside the arrayList",result1);
+		
+		//Test case 2: normal condition
+		ResourceCentre.addChromebook(chromebookList, cb1);
+		cb1.setIsAvailable(false);
+		boolean result2= ResourceCentre.doReturnChromebook(chromebookList,tag1);
+		assertTrue("The item has returned",result2);
+		
+		//Test case 3: return the available item - error
+		boolean result3= ResourceCentre.doReturnChromebook(chromebookList,tag1);
+		assertFalse("U cannot return unloaned item",result3);
+		
+		//Test case 4: check the status of the item after return
+		
+		assertEquals("The status is updated",true, cb1.getIsAvailable());
 	}
 
 	@After
