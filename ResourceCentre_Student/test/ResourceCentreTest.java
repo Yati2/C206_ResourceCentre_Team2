@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+//djksajdlsajdsladjaks
 
 public class ResourceCentreTest {
 	private Camcorder cc1;
