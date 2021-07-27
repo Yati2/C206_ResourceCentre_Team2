@@ -118,8 +118,13 @@ public class ResourceCentreTest {
 	public void testDoReturnChromebook() {
 		//fail("Not yet implemented");
 		// write your code here
+		assertNotNull("Test that if the Chromebook arrayList is empty loan for chromebook should be unavailable", chromebookList);
+		assertEquals("Test that only chromebook is returned", true, cb1.getIsAvailable());
+		ResourceCentre.doReturnChromebook(chromebookList, cb1.getAssetTag());
+        ResourceCentre.doReturnChromebook(chromebookList, cb2.getAssetTag());
+        assertEquals("Test that camcorder availability is true?", true, cb1.getIsAvailable());
+        assertEquals("Test that camcorder availability is true?", true, cb2.getIsAvailable());  
 	}
-	
 	@After
 	public void tearDown() throws Exception {
 		cc1 = null;
