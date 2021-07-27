@@ -97,7 +97,7 @@ public class ResourceCentreTest {
 
 		// by Xiaoyu
 		// Test if Item list is not null but empty, so that can add a new item
-				assertNotNull("Test if there is valid Camcorder arraylist to add to", chromebookList);
+				assertNotNull("Test if there is valid Chromebook arraylist to add to", chromebookList);
 				
 				//test if the list of chromebook retrieved from the SourceCentre is empty
 						String allChromebook= ResourceCentre.retrieveAllChromebook(chromebookList);
@@ -107,7 +107,7 @@ public class ResourceCentreTest {
 				//Given an empty list, after adding 2 items, test if the size of the list is 2
 				ResourceCentre.addChromebook(chromebookList, cb1);
 				ResourceCentre.addChromebook(chromebookList, cb2);
-				assertEquals("Test if that Camcorder arraylist size is 2?", 2, chromebookList.size());
+				assertEquals("Test if that Chromebook arraylist size is 2?", 2, chromebookList.size());
 				
 				//test if the expected output string same as the list of chromebook retrieved from the SourceCentre
 				allChromebook = ResourceCentre.retrieveAllChromebook(chromebookList);
