@@ -123,7 +123,7 @@ public class ResourceCentreTest {
 	@Test
 	public void testDoLoanCamcorder() {
 		//fail("Not yet implemented");
-		// write your code here
+		// yati
 		
 		String tag1="CC0011";
 		String date="29-9-2021";
@@ -134,7 +134,7 @@ public class ResourceCentreTest {
 		assertFalse("There is no item to loan",result1);
 		
 		
-		//Test case 2: 
+		//Test case 2: normal 
 		ResourceCentre.addCamcorder(camcorderList, cc1);
 		boolean result2= ResourceCentre.doLoanCamcorder(camcorderList,tag1 , date);
 		assertEquals("Test if cc1 is loaned", result2,true);
@@ -147,10 +147,7 @@ public class ResourceCentreTest {
 		//Test case 4: check due date and availability
 		assertEquals("Due Date checked",cc1.getDueDate(),date);
 		assertFalse("Availability checked",cc1.getIsAvailable());
-		
-	
-		
-	
+
 	}
 	
 	@Test
