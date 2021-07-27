@@ -168,6 +168,7 @@ public class ResourceCentre {
 		
 		camcorderList.add(cc);
 		System.out.println("Camcorder added");
+		
 	}
 	
 	public static Chromebook inputChromebook() {	
