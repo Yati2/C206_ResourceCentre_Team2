@@ -132,8 +132,6 @@ public class ResourceCentreTest {
 
 	@Test
 	public void testDoLoanCamcorder() {
-
-		//fail("Not yet implemented");
 		// yati
 		
 		String tag1="CC0011";
@@ -145,15 +143,11 @@ public class ResourceCentreTest {
 		boolean result1= ResourceCentre.doLoanCamcorder(camcorderList,tag1 , date);
 		assertFalse("There is no item to loan",result1);
 		
-		
 		//Test case 2: normal 
-
-
 		ResourceCentre.addCamcorder(camcorderList, cc1);
 
 		boolean result2= ResourceCentre.doLoanCamcorder(camcorderList,tag1 , date);
 		assertEquals("Test if cc1 is loaned", result2,true);
-		
 		
 		//Test case 3: double loan
 		boolean result3= ResourceCentre.doLoanCamcorder(camcorderList,tag1 , date);
@@ -162,7 +156,6 @@ public class ResourceCentreTest {
 		//Test case 4: check due date and availability
 		assertEquals("Due Date checked",cc1.getDueDate(),date);
 		assertFalse("Availability checked",cc1.getIsAvailable());
-
 
 		// Test case 4: check due date and availability
 		assertEquals("Due Date checked", cc1.getDueDate(), date);
@@ -191,9 +184,7 @@ public class ResourceCentreTest {
 		// WeiZhe
 		
 		String tag1="CC0011";
-		
 
-	
 		//Test case 1: if the asset tag is not in the arrayList -error
 		camcorderList.clear();
 		boolean result1= ResourceCentre.doReturnCamcorder(camcorderList,tag1);
@@ -210,18 +201,8 @@ public class ResourceCentreTest {
 		assertFalse("U cannot return unloaned item",result3);
 		
 		//Test case 4: check the status of the item after return
-		
 		assertEquals("The status is updated",true, cc1.getIsAvailable());
 
-		/*
-		assertNotNull("Test that if the Camcorder arrayList is empty loan for Camcorder should be unavailable",
-				camcorderList);
-		assertEquals("Test that only Camcorder is returned", true, cc1.getIsAvailable());
-		ResourceCentre.doReturnCamcorder(camcorderList, cc1.getAssetTag());
-		ResourceCentre.doReturnCamcorder(camcorderList, cc2.getAssetTag());
-		assertEquals("Test that Camcorder availability is true?", true, cc1.getIsAvailable());
-		assertEquals("Test that Camcorder availability is true?", true, cc2.getIsAvailable());
-*/
 	}
 
 	@Test
